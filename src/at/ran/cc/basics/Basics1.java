@@ -439,7 +439,6 @@ public class Basics1 {
             int result = addTwoNumbers(1,2);
             System.out.println(result);
     }
-
      static int addTwoNumbers(int a, int b) {
         int c = a + b;
         System.out.println(c);
