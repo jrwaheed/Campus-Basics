@@ -440,9 +440,9 @@ public class Basics1 {
             System.out.println(result);
     }
      static int addTwoNumbers(int a, int b) {
-        int c = a + b;
-        System.out.println(c);
-        return c;
+        int d = a + b;
+        System.out.println(d);
+        return d;
     }
 
 }
