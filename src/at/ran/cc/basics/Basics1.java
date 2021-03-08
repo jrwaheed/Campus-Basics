@@ -408,33 +408,28 @@ public class Basics1 {
         }
         ------------------------------------------------------------------------------------*/
 
-        int customerBalance = 1000;
-        int customerDeposit = 0;
-        int customerWithdrawal = 0;
-        Scanner InitialObj = new Scanner(System.in);
-        Scanner Obj = new Scanner(System.in);
-       // Scanner InitialObj = new Scanner(System.in);
-
-  /*      static void customerDeposit () {
-
-        }
-
-
 
         System.out.print("Please make your selection: \n 1) Deposit\n 2) Withdrawal\n 3) Account Balance\n 4) Exit \n");
+        Scanner InitialObj = new Scanner(System.in);
         String userInitialEntry = InitialObj.nextLine();
         System.out.println("Here is the user entry: " + userInitialEntry);
 
         switch (userInitialEntry) {
-            case 1:
-                System.out.println("1"); break;
-            case 2:
-                System.out.println("2"); break;
-            case 3:
-                System.out.println("3"); break;
-            case 4:
-                System.out.println("4"); break;
-            default: break;}*/
+            case "1":
+                System.out.println("Enter your deposit amount");
+                Scanner DepositObj = new Scanner(System.in);
+                String customerDepositAmount = DepositObj.nextLine();
+                break;
+            case "2":
+                System.out.println("Enter your deposit amount");
+                Scanner WithdrawalObj = new Scanner(System.in);
+                String customerWithdrawalAmount = WithdrawalObj.nextLine();
+                break;
+            case "3":
+                System.out.println("Your current balance is:"); break;
+            case "4":
+                System.out.println("Thank you for your business. Goodbye."); break;
+            default: break;}
     }
 
 }
