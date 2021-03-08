@@ -7,6 +7,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Basics1 {
+
+    int x = 0;
+
+
     public static void main(String[] args) {
         //System.out.println("Hello Coding Campus");
 
@@ -430,6 +434,16 @@ public class Basics1 {
             case "4":
                 System.out.println("Thank you for your business. Goodbye."); break;
             default: break;}
+
+
+            int result = addTwoNumbers(1,2);
+            System.out.println(result);
+    }
+
+     static int addTwoNumbers(int a, int b) {
+        int c = a + b;
+        System.out.println(c);
+        return c;
     }
 
 }
