@@ -4,57 +4,77 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.awt.font.NumericShaper;
 import java.sql.SQLOutput;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Stream;
+
+
+
+
 
 public class Basics1 {
-    static int currentBalance = 0;
-
-    static void addToBalance() {
-        System.out.println("Enter your deposit amount");
-        Scanner DepositObj = new Scanner(System.in);
-        int depositAmount = DepositObj.nextInt();
-        currentBalance = depositAmount + currentBalance;
-        System.out.println("Your new balance:" + currentBalance);
-    }
-
-    static void withdrawFromBalance() {
-        System.out.println("Enter your withdrawal amount");
-        Scanner withdrawalObj = new Scanner(System.in);
-        int withdrawalAmount = withdrawalObj.nextInt();
-        currentBalance = -withdrawalAmount + currentBalance;
-        System.out.println("Your new balance:" + currentBalance);
-    }
-
-    static void printBalance() {
-        System.out.println("Your current balance is:" + currentBalance);
-    }
-
-    static void printError() {
-        System.out.println("Incorrect entry. Try again");
-    }
-
-    static void Begin() {
-        boolean isFinished = false;
-        while (!isFinished) {
-            System.out.print("Please make your selection: \n 1) Deposit\n 2) Withdrawal\n 3) Account Balance\n 4) Exit \n");
-            Scanner InitialObj = new Scanner(System.in);
-            String userInitialEntry = InitialObj.nextLine();
-            switch (userInitialEntry) {
-                case "1" -> addToBalance();
-                case "2" -> withdrawFromBalance();
-                case "3" -> printBalance();
-                case "4" -> {
-                    System.out.println("Thank you for your business. Goodbye.");
-                    isFinished = true;
-                }
-                default -> printError();
-            }
-        }
-    }
 
     public static void main(String[] args) {
-        Begin();
+        /*---------------------------------------------------------------------------
+           PROBLEM!!!!!! SOMETHING WRONG!!!!!!!!!
+        for (int i = 0; i <= 1000; i++) {
+            int intLength = Integer.toString(i).length();
+            String numberString = Integer.toString(i);
+
+
+            int stringSum = 0;
+            for (int j = 0; j <= (intLength - 1) ; j++) {
+                char strDigit = numberString.charAt(j);
+                int intDigit = Character.getNumericValue(strDigit);
+                stringSum = stringSum + intDigit;
+            }
+            System.out.println(stringSum);
+        }
+----------------------------------------------------------------------------------------
+        for (int i = 40; i <= 1000; i++) {
+            int intLength = Integer.toString(i).length();
+            String numberString = Integer.toString(i);
+
+            int crossSum = 0;
+            for (int j = 0; j <= (intLength - 1) ; j++) {
+                char strDigit = numberString.charAt(j);
+                int intDigit = Character.getNumericValue(strDigit);
+                crossSum = crossSum + intDigit;
+            if(j == (intLength - 1 ) && (crossSum % 7 == 0)) {
+                System.out.println(i);
+            }
+            }
+
+        }
+        ----------------------------------------------------------------------------------------*/
+        ArrayList<Integer> stringSumList = new ArrayList<Integer>();
+        ArrayList<Integer> counterList = new ArrayList<Integer>();
+
+        for (int i = 0; i <= 50; i++) {
+            int intLength = Integer.toString(i).length();
+            String numberString = Integer.toString(i);
+
+
+            int crossSum = 0;
+            for (int j = 0; j <= (intLength - 1) ; j++) {
+                char strDigit = numberString.charAt(j);
+                int intDigit = Character.getNumericValue(strDigit);
+                crossSum = crossSum + intDigit;
+                if (j == (intLength - 1)) {
+                    stringSumList.add(crossSum);
+                }
+            }
+        }
+        System.out.println(stringSumList);
+        for (int i = 0; i <= 50; i++) {
+            counterList.add(Collections.frequency(stringSumList,stringSumList.get(i)));
+        }
+        int maxCount = counterList.stream().max(Integer::compare).get();
+        System.out.println(counterList);
+        System.out.println(maxCount);
+
     }
 }
+
+
+
 
