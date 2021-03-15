@@ -45,7 +45,7 @@ public class Basics1 {
             }
 
         }
-        ----------------------------------------------------------------------------------------*/
+        ----------------------------------------------------------------------------------------
         ArrayList<Integer> stringSumList = new ArrayList<Integer>();
         ArrayList<Integer> counterList = new ArrayList<Integer>();
 
@@ -71,8 +71,61 @@ public class Basics1 {
         int maxCount = counterList.stream().max(Integer::compare).get();
         System.out.println(counterList);
         System.out.println(maxCount);
-
+        ----------------------------------------------------------------------------------------*
+        int listLength = 100;
+        ArrayList<Integer> stringSumList = new ArrayList<Integer>();
+        ArrayList<Integer> counterList = new ArrayList<Integer>();
+        for (int i = 0; i <= listLength; i++) {
+            int intLength = Integer.toString(i).length();
+            String numberString = Integer.toString(i);
+            int crossSum = 0;
+            for (int j = 0; j <= (intLength - 1) ; j++) {
+                char strDigit = numberString.charAt(j);
+                int intDigit = Character.getNumericValue(strDigit);
+                crossSum = crossSum + intDigit;
+                if (j == (intLength - 1)) {
+                    stringSumList.add(crossSum);
+                }
+            }
+        }
+        System.out.println("List of Cross sums: " + stringSumList);
+        for (int i = 0; i <= listLength; i++) {
+            counterList.add(Collections.frequency(stringSumList,stringSumList.get(i)));
+        }
+        int maxCount = counterList.stream().max(Integer::compare).get();
+        int indexOfMax = counterList.indexOf(maxCount);
+        System.out.println("List of cross sum frequencies: " + counterList);
+        System.out.println("Max frequency: " + maxCount);
+        System.out.println("Index of max frequency: " +indexOfMax);
+        System.out.println("Most frequent cross sum is: " + stringSumList.get(indexOfMax));
+        ----------------------------------------------------------------------------------------*/
     }
+    static void looper() {
+
+        int intUnderReview = 23;
+        String strUnderReview = Integer.toString(intUnderReview);
+        int intLength = Integer.toString(intUnderReview).length();
+
+        char[] arrayUnderReview = strUnderReview.toCharArray();
+
+
+        int crossSum = 0;
+        while (Integer.toString(intUnderReview).length() >= 1) {
+            char charDigit = arrayUnderReview[intLength - 1];
+            int arrayDigit = Character.getNumericValue(charDigit);
+            crossSum = crossSum + arrayDigit;
+        }
+        if (Integer.toString(crossSum).length() > 1) {
+            intUnderReview = crossSum;
+            looper();
+        } else {
+            System.out.println("The final crossSum is: " + crossSum);
+        }
+    }
+
+
+
+
 }
 
 
