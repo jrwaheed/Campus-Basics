@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Connect4 {
 
     public static HashMap< Integer, List<Character>> boardMatrix = new HashMap<>();
-    public static Scanner Player1Obj = new Scanner(System.in);
+
 
     public static void print() {
         for (int i = 0; i < 6; i++) {
@@ -30,23 +30,23 @@ public class Connect4 {
         Player1Engine();
     }
 
-    public static int Player1Selection(Scanner Player1Obj) {
+    public static int Player1Selection() {
         System.out.println("Player 1, please enter drop column : ");
-
+        Scanner Player1Obj = new Scanner(System.in);
         int Player1Ycoordinate = Player1Obj.nextInt();
 
 
         if(Player1Ycoordinate > 6 || Player1Ycoordinate < 0) {
             System.out.println("Your selection must an integer be between 0 and 6");
 
-            Player1Selection(Player1Obj);
+            Player1Selection();
         }
 
         return Player1Ycoordinate;
     }
 
     public static void Player1Engine() {
-        int Player1drop = Player1Selection(Player1Obj);
+        int Player1drop = Player1Selection();
 
         for (int i = 5; i >= 0; i--) {
             if (boardMatrix.get(Player1drop).get(i) == '-') {
