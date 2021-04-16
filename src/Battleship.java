@@ -16,6 +16,10 @@ public class Battleship {
 
     //Recorded as Row/Column
     public static  int [][] player1FleetRecorder = new int[14][2];
+    public static  int [][] player1schlachtschiffRecorder = new int[5][2];
+    public static  int [][] player1kreuzerRecorder = new int[4][2];
+    public static  int [][] player1zerstorerRecorder = new int[3][2];
+    public static  int [][] player1ubooteRecorder = new int[2][2];
 
     public static void main(String [] args){
         randomLetterMap.put('A', 1);
@@ -31,10 +35,10 @@ public class Battleship {
 
         buildTheBoard();
         print();
-        randomShipNumericGenerator();
-        randomShipAlphabeticGenerator();
         player1ShipBuilder();
         printFleetRecorder();
+        updateBoardPlayer1();
+        print();
     }
 
 
@@ -72,13 +76,15 @@ public class Battleship {
 
     public static int randomShipNumericGenerator() {
         Random randomNumber = new Random();
-        int shipNumericAddress = randomNumber.nextInt((10 - 1) + 1) + 1;
+        int max = 10;
+        int min = 1;
+        int shipNumericAddress = randomNumber.nextInt((max + 1 - min) + min);
         return shipNumericAddress;
     }
 
     public static char randomShipAlphabeticGenerator(){
         Random randomLetter = new Random();
-        char shipAlphabeticAddress = randomLetterArray[randomLetter.nextInt(9 )];
+        char shipAlphabeticAddress = randomLetterArray[randomLetter.nextInt(10 )];
         return shipAlphabeticAddress;
     }
 
@@ -88,35 +94,60 @@ public class Battleship {
         return shipOrientation;
     }
 
-    public static void player1ShipBuilder (){
+    public static void player1ShipBuilder () {
+
+//NullPointException
 
         int schlachtschiffLocationRow = randomShipNumericGenerator();
         int schlachtschiffLocationColumn = randomLetterMap.get(randomShipAlphabeticGenerator());
         char schlachtschiffOrientation = randomShipOrientationGenerator();
 
-        switch(schlachtschiffOrientation) {
+
+
+
+        int kreuzerLocationRow = randomShipNumericGenerator();
+        int kreuzerLocationColumn = randomLetterMap.get(randomShipAlphabeticGenerator());
+        char kreuzerOrientation = randomShipOrientationGenerator();
+
+        switch (kreuzerOrientation) {
+
             case 'N':
-                for (int i = 0; i < 5; i++) {
-                    int [] schlachtschiffCoordinates = {schlachtschiffLocationRow , schlachtschiffLocationColumn + i};
-                    player1FleetRecorder[i] = schlachtschiffCoordinates;
+                int nKreuzerCounter = 0;
+                if (kreuzerLocationColumn < 5 ) {
+                    for (int i = 5; i < 9; i++) {
+                        int[] kreuzerCoordinates = {kreuzerLocationRow + nKreuzerCounter, kreuzerLocationColumn };
+                        player1FleetRecorder[i] = kreuzerCoordinates;
+                        nKreuzerCounter++;
+                    }
+                } else {
+                    for (int i = 8; i >= 5; i--) {
+                        int[] kreuzerCoordinates = {kreuzerLocationRow - nKreuzerCounter, kreuzerLocationColumn };
+                        player1FleetRecorder[i] = kreuzerCoordinates;
+                        nKreuzerCounter++;
+                    }
                 }
                 break;
+
+
             case 'W':
-                for (int i = 0; i < 5; i++) {
-                    int [] schlachtschiffCoordinates = {schlachtschiffLocationRow + i , schlachtschiffLocationColumn};
-                    player1FleetRecorder[i] = schlachtschiffCoordinates;
+                int wKreuzerCounter = 0;
+                if (kreuzerLocationColumn < 5) {
+                    for (int i = 5; i < 9; i++) {
+                        int[] kreuzerCoordinates = {kreuzerLocationRow, kreuzerLocationColumn + wKreuzerCounter};
+                        player1FleetRecorder[i] = kreuzerCoordinates;
+                        wKreuzerCounter++;
+                    }
+                } else {
+                    for (int i = 8; i >= 5; i--) {
+                        int[] kreuzerCoordinates = {kreuzerLocationRow, kreuzerLocationColumn - wKreuzerCounter};
+                        player1FleetRecorder[i] = kreuzerCoordinates;
+                        wKreuzerCounter++;
+                    }
                 }
                 break;
-        }
+            }
     }
 
-    public static void updateBoardPlayer1 () {
-        for (int i = 1; i <= 10; i++) {                    //The number of Arrays
-            for (int j = 0; j <= 10; j++) {                //The number of elements in each Array
-                battleshipBoard.get(i)[j] = " - ";
-            }
-        }
-    }
     public static void printFleetRecorder() {
         for (int i = 0; i <= 13; i++) {
             for (int j = 0; j <= 1; j++) {
@@ -125,6 +156,15 @@ public class Battleship {
             System.out.println();
         }
     }
+
+
+    public static void updateBoardPlayer1 () {
+        for (int [] array : player1FleetRecorder) {
+            battleshipBoard.get(array[0])[array[1]] = " X ";   //battleshipBoard.get(row)[column]
+            }
+        }
+
+
 
 
 
