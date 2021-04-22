@@ -238,10 +238,14 @@ public class Battleship {
         String shipStatus = "#";
         String shipDamage = "-";
         System.out.println("\nSTATUS ");
-        System.out.println("Your Large Ship:  " + shipStatus.repeat(player2BigShipRecorder.length - player2LosesOnBigShip.size()) + shipDamage.repeat(player2LosesOnBigShip.size()));
-        System.out.println("Your Medium Ship: " + shipStatus.repeat(player2MediumShipRecorder.length - player2LosesOnMediumShip.size()) + shipDamage.repeat(player2LosesOnMediumShip.size()));
-        System.out.println("Your Small Ship:  " + shipStatus.repeat(player2SmallShipRecorder.length - player2LosesOnSmallShip.size()) + shipDamage.repeat(player2LosesOnSmallShip.size()));
-        System.out.println("Your Tiny Ship:   " + shipStatus.repeat(player2TinyShipRecorder.length - player2LosesOnTinyShip.size()) + shipDamage.repeat(player2LosesOnTinyShip.size()) + "\n");
+        System.out.println("Your Large Ship:  " + shipStatus.repeat(player2BigShipRecorder.length -
+                player2LosesOnBigShip.size()) + shipDamage.repeat(player2LosesOnBigShip.size()));
+        System.out.println("Your Medium Ship: " + shipStatus.repeat(player2MediumShipRecorder.length -
+                player2LosesOnMediumShip.size()) + shipDamage.repeat(player2LosesOnMediumShip.size()));
+        System.out.println("Your Small Ship:  " + shipStatus.repeat(player2SmallShipRecorder.length -
+                player2LosesOnSmallShip.size()) + shipDamage.repeat(player2LosesOnSmallShip.size()));
+        System.out.println("Your Tiny Ship:   " + shipStatus.repeat(player2TinyShipRecorder.length -
+                player2LosesOnTinyShip.size()) + shipDamage.repeat(player2LosesOnTinyShip.size()) + "\n");
 
 
         boolean isOkNumberEntry = false;
