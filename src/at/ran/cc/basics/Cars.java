@@ -9,6 +9,7 @@ public class Cars {
     public String color;
     public int price;
 
+
     public void joyRiding() {
         this.fuelCapacity = this.fuelCapacity - this.fuelConsumption;
     }

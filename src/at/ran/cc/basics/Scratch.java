@@ -3,6 +3,7 @@ package at.ran.cc.basics;
 public class Scratch {
 
     public static void main(String [] args) {
+
         Cars car1 = new Cars();
         car1.vehicleBrand = "Jaguar";
         car1.color = "White";
