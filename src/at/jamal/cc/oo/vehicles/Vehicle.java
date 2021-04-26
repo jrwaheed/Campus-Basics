@@ -1,5 +1,8 @@
 package at.jamal.cc.oo.vehicles;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vehicle {
     //Mandatory fields
 
@@ -10,6 +13,9 @@ public class Vehicle {
     private boolean isForVIP = true;
     private Engine engine;
     private Tank tank;
+    private List<RearViewMirrors> rearViewMirrors;
+    private List<Tires> tires;
+
 
 
     public Vehicle(Boolean isLuxury, int price, Boolean isForVIP, Engine engine, Tank tank) {
@@ -18,7 +24,11 @@ public class Vehicle {
         this.isForVIP = isForVIP;
         this.engine = engine;
         this.tank = tank;
+        this.rearViewMirrors = new ArrayList<>();
+        this.tires = new ArrayList<>();
     }
+
+
 
     public boolean getisForVIP() {
         return isForVIP;
@@ -38,7 +48,6 @@ public class Vehicle {
     }
 
     public Engine getEngine() {
-
         return engine;
     }
 
@@ -49,7 +58,14 @@ public class Vehicle {
 
     public void drive(int speedOfVehicle){
         System.out.println("You are traveling at " + speedOfVehicle + "mph");
+    }
 
+    public void addMirror(RearViewMirrors rearViewMirror ) {
+        this.rearViewMirrors.add(rearViewMirror);
+    }
+
+    public List<RearViewMirrors> getRearViewMirrors() {
+        return rearViewMirrors;
     }
 }
 
