@@ -1,4 +1,4 @@
-package OO;
+package OO.intro_package;
 
 import java.util.ArrayList;
 import java.util.List;

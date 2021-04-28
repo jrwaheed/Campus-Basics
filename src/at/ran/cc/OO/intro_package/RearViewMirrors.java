@@ -1,4 +1,4 @@
-package OO;
+package OO.intro_package;
 
 public class RearViewMirrors {
     public enum POSITION {center, right, left, camera}

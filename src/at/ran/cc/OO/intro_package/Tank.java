@@ -1,4 +1,4 @@
-package OO;
+package OO.intro_package;
 
 public class Tank {
     public int getCapacity() {

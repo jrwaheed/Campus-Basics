@@ -1,4 +1,4 @@
-package OO;
+package OO.intro_package;
 
 public class Tires {
     public enum QUALITY {low, medium, high}
