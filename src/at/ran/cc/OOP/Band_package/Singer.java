@@ -33,4 +33,5 @@ public class Singer {
     public void sing() {
         System.out.println("lalalalalalala. i sing welll!");
     }
+
 }
