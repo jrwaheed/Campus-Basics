@@ -1,4 +1,4 @@
-package OO.remote_package;
+package at.ran.cc.OOP.remote_package;
 
 public class Buttons {
     public enum FORM {SQUARE, CIRCLE, TRIANGLE}

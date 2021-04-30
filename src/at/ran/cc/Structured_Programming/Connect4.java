@@ -1,3 +1,5 @@
+package at.ran.cc.Structured_Programming;
+
 import java.util.*;
 import java.util.Scanner;
 

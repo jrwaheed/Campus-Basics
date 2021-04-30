@@ -1,4 +1,4 @@
-package at.jamal.cc.oo.vehicles;
+package at.ran.cc.OOP.intro_OO;
 
 public class RearViewMirrors {
 

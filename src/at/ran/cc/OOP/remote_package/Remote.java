@@ -1,4 +1,4 @@
-package OO.remote_package;
+package at.ran.cc.OOP.remote_package;
 
 import java.util.ArrayList;
 import java.util.List;
