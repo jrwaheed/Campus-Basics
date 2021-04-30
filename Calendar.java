@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 
-public class Java_Practice {
+public class Calendar {
     
     public static void main(String[] args) {
 
