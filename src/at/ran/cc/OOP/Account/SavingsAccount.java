@@ -47,4 +47,8 @@ public class SavingsAccount {
     public void setAccountWithdrawal(float accountWithdrawal) {
         this.accountWithdrawal = accountWithdrawal;
     }
+
+    public void setAccountBalance(float accountBalance) {
+        this.accountBalance = accountBalance;
+    }
 }

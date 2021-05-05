@@ -6,6 +6,11 @@ public class CheckingAccount {
     private float accountBalance = 12745;
     private float accountDeposit;
     private float accountWithdrawal;
+
+    public void setAccountBalance(float accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
     private float minimumBalance = 1000;
 
     public CheckingAccount(float overDraftFee, float transactionFee, float accountBalance, float minimumBalance) {
