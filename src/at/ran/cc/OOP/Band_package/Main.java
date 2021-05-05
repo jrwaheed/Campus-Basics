@@ -13,6 +13,7 @@ public class Main {
 
         singer1.sing();
         singer2.sing();
-        System.out.println("Checking pull request");
+        System.out.println("Checking");
+
     }
 }
