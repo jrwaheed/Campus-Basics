@@ -180,7 +180,7 @@ public class Main {
         }
     }
 
-    public static void savingsAccountUpdate () {
+    public static void savingsAccountUpdate() {
         System.out.println("You have chosen Savings Account. What would you like to do?");
         System.out.println("1 - Make a deposit\n2 - Make a withdrawal\n3 - Check Savings Account Balance\n4 - Check Account Details");
         Scanner savingsAccountSelectionObj = new Scanner(System.in);
