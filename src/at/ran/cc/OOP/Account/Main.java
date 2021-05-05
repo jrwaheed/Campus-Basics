@@ -15,10 +15,19 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException {
-
-
         begin();
-        int userAccountSelectionToMethod = firstPivot();
+        firstUserRequest();
+    }
+
+    public static void begin() throws InterruptedException {
+        System.out.println("***********************************************");
+        System.out.println("************  Welcome to JRW Bank  ************");
+        System.out.println("***********************************************\n");
+
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    public static void pivot(int userAccountSelectionToMethod){
         switch (userAccountSelectionToMethod) {
             case 1:
                 checkingAccountUpdate();
@@ -35,31 +44,24 @@ public class Main {
             case 5:
                 System.out.println("Thank you for your business at JRW Bank. Have a good day!");
                 System.exit(0);
+
         }
     }
 
-    public static void begin() throws InterruptedException {
-        System.out.println("***********************************************");
-        System.out.println("************  Welcome to JRW Bank  ************");
-        System.out.println("***********************************************\n");
-
-        TimeUnit.SECONDS.sleep(2);
-    }
-
-    public static int firstPivot() {
+    public static void firstUserRequest() {
         System.out.println("Which account would you like to use today? Please enter the number of your selection.");
         System.out.println("1 - Checking\n2 - Credit Card\n3 - Mortgage \n4 - Savings Account\n5 - Exit");
         Scanner userAccountSelectionObj = new Scanner(System.in);
         int userAccountSelectionToMethod = userAccountSelectionObj.nextInt();
-        return userAccountSelectionToMethod;
+        pivot(userAccountSelectionToMethod);
     }
 
-    public static int secondPivot() {
+    public static void nextUserRequest() {
         System.out.println("\n\nWould you like to make another transaction? Please enter the number of your selection.");
         System.out.println("1 - Checking\n2 - Credit Card\n3 - Mortgage \n4 - Savings Account\n5 - Exit");
         Scanner userAccountSelectionObj = new Scanner(System.in);
         int userAccountSelectionToMethod = userAccountSelectionObj.nextInt();
-        return userAccountSelectionToMethod;
+        pivot(userAccountSelectionToMethod);
     }
 
     public static void checkingAccountUpdate() {
@@ -79,7 +81,7 @@ public class Main {
 
                 System.out.println("You have deposited: $" + client1.getCheckingAccount().getAccountDeposit());
                 System.out.println("Your new balance is: $" + client1.getCheckingAccount().getAccountBalance());
-                secondPivot();
+                nextUserRequest();
                 break;
 
             case 2:
@@ -92,19 +94,19 @@ public class Main {
 
                 System.out.println("You have withdrawn: $" + client1.getCheckingAccount().getAccountWithdrawal());
                 System.out.println("Your new balance is: $" + client1.getCheckingAccount().getAccountBalance());
-                secondPivot();
+                nextUserRequest();
                 break;
 
             case 3:
                 System.out.println("Your account balance is : $" + client1.getCheckingAccount().getAccountBalance());
-                secondPivot();
+                nextUserRequest();
                 break;
 
             case 4:
                 System.out.println("Your checking account fees are as follows:");
                 System.out.println("Overdraft fees: " + client1.getCheckingAccount().getOverDraftFee());
                 System.out.println("Transaction fees: " + client1.getCheckingAccount().getTransactionFee());
-                secondPivot();
+                nextUserRequest();
                 break;
         }
     }
@@ -126,18 +128,19 @@ public class Main {
 
                 System.out.println("You have paid: $" + client1.getCreditAccount().getCardPayment());
                 System.out.println("Your new balance is: $" + client1.getCreditAccount().getPrincipleAmount());
+                nextUserRequest();
                 break;
 
             case 2:
                 System.out.println("Your principle is : $" + client1.getCreditAccount().getPrincipleAmount());
+                nextUserRequest();
                 break;
 
             case 3:
                 System.out.println("Your credit card interest rate is: " + client1.getCreditAccount().getCreditRate());
+                nextUserRequest();
                 break;
         }
-
-
     }
 
     public static void mortgageAccountUpdate() {
@@ -157,19 +160,22 @@ public class Main {
 
                 System.out.println("You have made a payment of: $" + client1.getMortgage().getMakePayment());
                 System.out.println("Your new principle is: $" + client1.getMortgage().getMortgagePrincipleBalance());
+                nextUserRequest();
                 break;
 
             case 2:
                 System.out.println("Your loan amount is: $" + client1.getMortgage().getloanAmount());
+                nextUserRequest();
                 break;
 
             case 3:
                 System.out.println("Your principle is: $" + client1.getMortgage().getMortgagePrincipleBalance());
-                ;
+                nextUserRequest();
                 break;
 
             case 4:
                 System.out.println("Your mortgage rate is: " + client1.getMortgage().getMortgageRate());
+                nextUserRequest();
                 break;
         }
     }
@@ -191,6 +197,7 @@ public class Main {
 
                 System.out.println("You have deposited: $" + client1.getSavingsAccount().getAccountDeposit());
                 System.out.println("Your new balance is: $" + client1.getSavingsAccount().getAccountBalance());
+                nextUserRequest();
                 break;
 
             case 2:
@@ -203,10 +210,12 @@ public class Main {
 
                 System.out.println("You have withdrawn: $" + client1.getSavingsAccount().getAccountWithdrawal());
                 System.out.println("Your new balance is: $" + client1.getSavingsAccount().getAccountBalance());
+                nextUserRequest();
                 break;
 
             case 3:
                 System.out.println("Your account balance is : $" + client1.getSavingsAccount().getAccountBalance());
+                nextUserRequest();
                 break;
 
             case 4:
@@ -214,6 +223,7 @@ public class Main {
                 System.out.println("Overdraft fees: " + client1.getSavingsAccount().getOverDraftFee());
                 System.out.println("Current Interest rate: " + client1.getSavingsAccount().getInterestRate());
                 System.out.println("Minimum Balance: " + client1.getSavingsAccount().getMinimumBalance());
+                nextUserRequest();
                 break;
         }
 
