@@ -1,42 +1,45 @@
 package at.ran.cc.OOP.Account;
 
 public class Mortgage {
-    private float principleAmount = 175000;
+    private float loanAmount = 175000;
     private float monthlyNote = 600;
-    private float accountBalance = 12745;
-    private float recentPayment;
+    private float mortgagePrincipleBalance = 90000;
+    private float makePayment;
     private float mortgageRate = .04f;
 
-    public Mortgage(float principleAmount, float monthlyNote, float accountBalance, float mortgageRate) {
-        this.principleAmount = principleAmount;
+    public Mortgage(float loanAmount, float monthlyNote, float accountBalance, float mortgageRate) {
+        this.loanAmount = loanAmount;
         this.monthlyNote = monthlyNote;
-        this.accountBalance = accountBalance;
-        this.recentPayment = recentPayment;
+        this.mortgagePrincipleBalance = mortgagePrincipleBalance;
+        this.makePayment = makePayment;
         this.mortgageRate = mortgageRate;
     }
 
-    public float getPrincipleAmount() {
-        return principleAmount;
+    public float getloanAmount() {
+        return loanAmount;
     }
 
     public float getMonthlyNote() {
         return monthlyNote;
     }
 
-    public float getAccountBalance() {
-        return accountBalance;
+    public float getMortgagePrincipleBalance() {
+        return mortgagePrincipleBalance;
     }
 
-    public float getRecentPayment() {
-        return recentPayment;
+    public float getMakePayment() {
+        return makePayment;
     }
 
     public float getMortgageRate() {
         return mortgageRate;
     }
 
-    public void setRecentPayment(float recentPayment) {
-        this.recentPayment = recentPayment;
+    public void setMortgagePrincipleBalance(float mortgagePrincipleBalance) {
+        this.mortgagePrincipleBalance = mortgagePrincipleBalance;
+    }
+
+    public void setMakePayment(float makePayment) {
+        this.makePayment = makePayment;
     }
 }
-
