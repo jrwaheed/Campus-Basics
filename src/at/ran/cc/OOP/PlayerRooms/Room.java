@@ -7,8 +7,8 @@ public class Room {
     private ArrayList<Player> mPlayerList;
 
     public Room(String bezeichnung) {
-        mPlayerList = new ArrayList<>();
         this.bezeichnung = bezeichnung;
+        this.mPlayerList = new ArrayList<>();
 
     }
 
@@ -32,6 +32,8 @@ public class Room {
         for (int i = 0; i < this.mPlayerList.size(); i++) {
             System.out.println(this.mPlayerList.get(i).getFullName());
         }
-    }
-}
 
+
+        }
+
+    }
