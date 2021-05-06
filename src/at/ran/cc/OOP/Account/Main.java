@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
 
-    public static SavingsAccount savings1 = new SavingsAccount(25, .01f, 90000, 100);
+    private static SavingsAccount savings1 = new SavingsAccount(25, .01f, 90000, 100);
     public static CheckingAccount checking1 = new CheckingAccount(25, .05f, 12745, 1000);
     public static Mortgage mortgage1 = new Mortgage(175000, 600, 90000, .04f);
     public static CreditAccount credit1 = new CreditAccount(2000, 25, .15f);
