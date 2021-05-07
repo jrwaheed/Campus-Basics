@@ -8,7 +8,8 @@ public class Main {
         Human human2 = new Human("Emmitt", "Smith", 38, 177);
         Human human3 = new Human("Andre", "Dawson", 48, 180);
 
-        OfficeWorker worker1 = new OfficeWorker("John", "Doe", 50, 165);
+        OfficeWorker worker1 = new OfficeWorker("John", "Doe", 50, 165,
+                "Accountant");
 
         Athlete athlete1 = new Athlete("Lindsey", "Von", 30, 165,
                 5.0);
@@ -22,7 +23,9 @@ public class Main {
         Striker striker1 = new Striker("Tony", "Bigfoot", 40, 180,
                 4.5, true, false);
 
+
         worker1.filling();
+        System.out.println(worker1.getEmploymentType());
 
         goalie1.stopsBall();
 

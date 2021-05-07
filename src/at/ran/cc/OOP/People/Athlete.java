@@ -7,6 +7,10 @@ public class Athlete extends Human{
         this.fortyTime = fortyTime;
     }
 
+    public void movement(){
+        System.out.println("I move better than your average desk jockie.");
+    }
+
     public double getFortyTime() {
         return fortyTime;
     }

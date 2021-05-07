@@ -6,9 +6,6 @@ public class TestRaumPlayer {
         Room nRoom = new Room("Bathroom");
         Room oRoom = new Room("kitchen");
 
-
-
-
         Player player1 = new Player(nRoom, "Johnnie", 23, false);
         Player player2 = new Player(oRoom, "Beth", 21, true);
         Player player3 = new Player(mRoom, "Karen", 27, false);
@@ -19,7 +16,10 @@ public class TestRaumPlayer {
         nRoom.addPlayerList(player1);
         oRoom.addPlayerList(player2);
 
-       nRoom.printPlayers();
+
+
+
+
 
     }
 
