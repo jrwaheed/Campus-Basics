@@ -14,6 +14,7 @@ public class Main {
     public static ClientPortfolio client1 = new ClientPortfolio("Richard", "Rich", savings1, checking1, mortgage1, credit1);
 
 
+
     public static void main(String[] args) throws InterruptedException {
         begin();
         firstUserRequest();
