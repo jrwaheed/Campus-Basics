@@ -18,7 +18,7 @@ public class Camera {
     }
 
     public void shutterClick(CAMERARESOLUTION resolution){
-        System.out.println("SNAP!");
+        System.out.println("SNAP..");
 
 
     }
