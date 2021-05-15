@@ -51,4 +51,8 @@ public class Files {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Camera.CAMERARESOLUTION getResolution() {
+        return resolution;
+    }
 }

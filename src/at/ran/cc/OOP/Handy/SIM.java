@@ -15,6 +15,7 @@ public class SIM {
 
     public void makeCall(String phoneNumber) {
         System.out.println("Dialing " + phoneNumber);
-        System.out.println("ring ring...");
+        System.out.println("ring... ring...\n");
+        System.out.println("Hallo?");
     }
 }

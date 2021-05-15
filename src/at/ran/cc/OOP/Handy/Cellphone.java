@@ -13,17 +13,16 @@ public class Cellphone {
         this.memory = memory;
     }
 
-    public void makeCall(String phoneNumber){
-        System.out.println("Dialing " + phoneNumber);
-        System.out.println("ring ring...");
-    }
-
     public Camera getCamera() {
         return camera;
     }
 
     public Memory getMemory() {
         return memory;
+    }
+
+    public SIM getSim() {
+        return sim;
     }
 }
 
