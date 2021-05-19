@@ -91,7 +91,7 @@ public class Battleship {
     }
 
     public static void buildTheDefensiveBoards() {
-        //DON'T FUCK WITH THIS!! THIS IS THE BOARD CONSTRUCTOR!
+        //DON'T SCREW WITH THIS!! THIS IS THE BOARD BUILD!
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
