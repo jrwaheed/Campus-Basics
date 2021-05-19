@@ -1,5 +1,6 @@
 package at.ran.cc.OOP.remote_package;
 
+//in progress
 public class Buttons {
     public enum FORM {SQUARE, CIRCLE, TRIANGLE}
     private FORM shape;

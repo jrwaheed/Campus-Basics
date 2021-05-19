@@ -1,5 +1,6 @@
 package at.ran.cc.Structured_Programming;
 
+//updated
 public class OOPpractice{
 
     // Objektvariablern GEDÄCHTNIS

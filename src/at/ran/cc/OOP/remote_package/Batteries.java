@@ -1,5 +1,7 @@
 package at.ran.cc.OOP.remote_package;
 
+
+//in progress
 public class Batteries {
     public enum TYPE {A, AA, AAA}
     private TYPE capacity;

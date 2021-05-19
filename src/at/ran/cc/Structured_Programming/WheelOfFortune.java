@@ -1,5 +1,6 @@
 package at.ran.cc.Structured_Programming;
 
+//updated
 import java.util.Random;
 
 
